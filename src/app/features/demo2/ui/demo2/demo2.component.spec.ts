@@ -1,5 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveComponentModule } from '@ngrx/component';
 import { Demo2Component } from './demo2.component';
 
 describe('Demo2Component', () => {
@@ -9,6 +10,7 @@ describe('Demo2Component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [Demo2Component],
+      imports: [HttpClientTestingModule, ReactiveComponentModule],
     }).compileComponents();
   });
 

@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ApplicationRef, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-demo2',
@@ -7,7 +9,27 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Demo2Component implements OnInit {
-  constructor() {}
+  constructor(private app: ApplicationRef, private readonly http: HttpClient) {
+    requestAnimationFrame(() => this.app.tick());
+  }
 
-  ngOnInit(): void {}
+  user$: Observable<any | null> = of(null);
+  messageSubject$ = new BehaviorSubject<string>('Hello world');
+  _message$ = this.messageSubject$.asObservable();
+
+  get message$() {
+    return this._message$;
+  }
+
+  ngOnInit(): void {
+    this.fetchUser();
+  }
+
+  fetchUser() {
+    this.user$ = this.http.get('https://jsonplaceholder.typicode.com/users/1');
+  }
+
+  changeMeassage() {
+    this.messageSubject$.next('click message');
+  }
 }
