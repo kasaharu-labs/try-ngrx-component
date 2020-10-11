@@ -1,1 +1,13 @@
 <h2>demo component</h2>
+<h3>Http request</h3>
+<section>
+  <ng-container *ngIf="user$ | async as user">
+    <div>{{ user.name }}</div>
+  </ng-container>
+</section>
+
+<h3>Click event</h3>
+<section>
+  <div>Message: {{ message$ | async }}</div>
+  <button (click)="changeMeassage()">Click</button>
+</section>
