@@ -1,6 +1,6 @@
 # try-ngrx-component
 
-![](https://github.com/kasaharu/ng-basis/workflows/Node%20CI/badge.svg)
+![](https://github.com/kasaharu/try-ngrx-component/workflows/Node%20CI/badge.svg)
 
 ## 使い方
 
