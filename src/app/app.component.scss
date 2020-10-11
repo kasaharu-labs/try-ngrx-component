@@ -16,3 +16,33 @@
   color: aliceblue;
   font-size: 1rem;
 }
+
+main {
+  padding: 16px;
+}
+
+a {
+  padding: 8px 10px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+
+  &:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  &:visited,
+  &:link {
+    color: #334953;
+  }
+
+  &:hover {
+    color: #039be5;
+    background-color: #cfd8dc;
+  }
+
+  &.active {
+    color: #039be5;
+  }
+}
