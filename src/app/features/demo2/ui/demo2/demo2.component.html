@@ -1,13 +1,16 @@
 <h2>demo2 component</h2>
-<h3>Http request</h3>
-<section>
-  <ng-container *ngrxLet="user$ as user">
-    <div>{{ user.name }}</div>
-  </ng-container>
-</section>
 
-<h3>Click event</h3>
-<section>
-  <div>Message: {{ message$ | ngrxPush }}</div>
-  <button (click)="changeMeassage()">Click</button>
-</section>
+<div class="demo-contents">
+  <section class="content">
+    <h3>Http request</h3>
+    <ng-container *ngrxLet="user$ as user">
+      <div>{{ user.name }}</div>
+    </ng-container>
+  </section>
+
+  <section class="content">
+    <h3>Click event</h3>
+    <div>Message: {{ message$ | ngrxPush }}</div>
+    <button (click)="changeMeassage()">Click</button>
+  </section>
+</div>
