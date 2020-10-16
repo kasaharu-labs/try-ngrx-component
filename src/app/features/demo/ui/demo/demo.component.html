@@ -1,16 +1,8 @@
 <h2>demo component</h2>
 
 <div class="demo-contents">
-  <section class="content">
-    <h3>Http request</h3>
-    <ng-container *ngIf="user$ | async as user">
-      <div>{{ user.name }}</div>
-    </ng-container>
-  </section>
-
-  <section class="content">
-    <h3>Click event</h3>
-    <div>Message: {{ message$ | async }}</div>
-    <button (click)="changeMeassage()">Click</button>
-  </section>
+  <div>2 秒後に message が表示される</div>
+  <ng-container *ngIf="message$ | async as message">
+    <div>message: {{ message }}</div>
+  </ng-container>
 </div>
